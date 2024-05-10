@@ -30,7 +30,7 @@
 #include "watch_utility.h"
 
 #define CD_SELECTIONS 3
-#define DEFAULT_MINUTES 3
+#define DEFAULT_MINUTES 4
 
 static bool quick_ticks_running;
 

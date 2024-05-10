@@ -107,6 +107,16 @@ const int16_t movement_timeout_inactivity_deadlines[4] = {60, 120, 300, 1800};
 movement_event_t event;
 
 const int16_t movement_timezone_offsets[] = {
+    -420,   // 31 :  -7:00:00 (Mountain Standard Time)
+    -360,   // 32 :  -6:00:00 (Central Standard Time)
+    -300,   // 33 :  -5:00:00 (Eastern Standard Time)
+    -270,   // 34 :  -4:30:00 (Venezuelan Standard Time)
+    -240,   // 35 :  -4:00:00 (Atlantic Standard Time)
+    -210,   // 36 :  -3:30:00 (Newfoundland Standard Time)
+    -180,   // 37 :  -3:00:00 (Brasilia Time)
+    -150,   // 38 :  -2:30:00 (Newfoundland Daylight Time)
+    -120,   // 39 :  -2:00:00 (Fernando de Noronha Time)
+    -60,    // 40 :  -1:00:00 (Azores Standard Time)
     0,      //  0 :   0:00:00 (UTC)
     60,     //  1 :   1:00:00 (Central European Time)
     120,    //  2 :   2:00:00 (South African Standard Time)
@@ -138,16 +148,6 @@ const int16_t movement_timezone_offsets[] = {
     -570,   // 28 :  -9:30:00 (Marquesas Islands Time)
     -540,   // 29 :  -9:00:00 (Alaska Standard Time)
     -480,   // 30 :  -8:00:00 (Pacific Standard Time)
-    -420,   // 31 :  -7:00:00 (Mountain Standard Time)
-    -360,   // 32 :  -6:00:00 (Central Standard Time)
-    -300,   // 33 :  -5:00:00 (Eastern Standard Time)
-    -270,   // 34 :  -4:30:00 (Venezuelan Standard Time)
-    -240,   // 35 :  -4:00:00 (Atlantic Standard Time)
-    -210,   // 36 :  -3:30:00 (Newfoundland Standard Time)
-    -180,   // 37 :  -3:00:00 (Brasilia Time)
-    -150,   // 38 :  -2:30:00 (Newfoundland Daylight Time)
-    -120,   // 39 :  -2:00:00 (Fernando de Noronha Time)
-    -60,    // 40 :  -1:00:00 (Azores Standard Time)
 };
 
 const char movement_valid_position_0_chars[] = " AaBbCcDdEeFGgHhIiJKLMNnOoPQrSTtUuWXYZ-='+\\/0123456789";
