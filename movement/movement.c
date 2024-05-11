@@ -57,6 +57,12 @@
 
 #include "movement_custom_signal_tunes.h"
 
+#ifdef SIGNAL_TUNE_BEEP_CUSTOM
+#include "beep_face.h"
+int use(int tune_number);
+#endif
+
+
 // Default to no secondary face behaviour.
 #ifndef MOVEMENT_SECONDARY_FACE_INDEX
 #define MOVEMENT_SECONDARY_FACE_INDEX 0
@@ -336,7 +342,23 @@ void movement_play_signal(void) {
         watch_enable_buzzer();
     }
     movement_state.is_buzzing = true;
-    watch_buzzer_play_sequence(signal_tune, maybe_disable_buzzer);
+    #ifdef SIGNAL_TUNE_SELECT
+        if (tune_number == 0) {
+            watch_buzzer_play_sequence(default_tune, maybe_disable_buzzer);
+        } else if (tune_number == 1) {
+            watch_buzzer_play_sequence(zelda_tune, maybe_disable_buzzer);
+        } else if (tune_number == 2) {
+            watch_buzzer_play_sequence(mario_tune, maybe_disable_buzzer);
+        } else if (tune_number == 3) {
+            watch_buzzer_play_sequence(kim_tune, maybe_disable_buzzer);
+        } else if (tune_number == 4) {
+            watch_buzzer_play_sequence(pokemon_tune, maybe_disable_buzzer);
+        } else if (tune_number == 5) {
+            watch_buzzer_play_sequence(winchester_tune, maybe_disable_buzzer);
+        }
+        #else
+            watch_buzzer_play_sequence(signal_tune, maybe_disable_buzzer);
+        #endif
     if (movement_state.le_mode_ticks == -1) {
         // the watch is asleep. wake it up for "1" round through the main loop.
         // the sleep_mode_app_loop will notice the is_buzzing and note that it
