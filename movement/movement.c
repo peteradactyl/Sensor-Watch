@@ -57,8 +57,8 @@
 
 #include "movement_custom_signal_tunes.h"
 
-#ifdef SIGNAL_TUNE_BEEP_CUSTOM
-#include "beep_face.h"
+#ifdef HOURLY_TUNE_SELECT
+#include "hourly_tune_face.h"
 int use(int tune_number);
 #endif
 
@@ -342,7 +342,10 @@ void movement_play_signal(void) {
         watch_enable_buzzer();
     }
     movement_state.is_buzzing = true;
-    #ifdef SIGNAL_TUNE_SELECT
+    //default hourly tune:
+    //watch_buzzer_play_sequence(default_tune, maybe_disable_buzzer);
+
+    #ifdef HOURLY_TUNE_SELECT
         if (tune_number == 0) {
             watch_buzzer_play_sequence(default_tune, maybe_disable_buzzer);
         } else if (tune_number == 1) {
@@ -358,7 +361,7 @@ void movement_play_signal(void) {
         }
         #else
             watch_buzzer_play_sequence(signal_tune, maybe_disable_buzzer);
-        #endif
+    #endif  
     if (movement_state.le_mode_ticks == -1) {
         // the watch is asleep. wake it up for "1" round through the main loop.
         // the sleep_mode_app_loop will notice the is_buzzing and note that it

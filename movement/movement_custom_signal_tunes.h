@@ -25,7 +25,7 @@
 #ifndef MOVEMENT_CUSTOM_SIGNAL_TUNES_H_
 #define MOVEMENT_CUSTOM_SIGNAL_TUNES_H_
 
-#ifdef SIGNAL_TUNE_SELECT
+#ifdef HOURLY_TUNE_SELECT
 int8_t default_tune[] = {
     BUZZER_NOTE_C8, 5,
     BUZZER_NOTE_REST, 6,
@@ -101,7 +101,7 @@ int8_t winchester_tune[] = {
     BUZZER_NOTE_F4, 40,
     0
 };
-#endif // SIGNAL_TUNE_SELECT
+#endif // HOURLY_TUNE_SELECT
 
 #ifdef SIGNAL_TUNE_DEFAULT
 int8_t signal_tune[] = {
