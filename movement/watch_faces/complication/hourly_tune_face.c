@@ -261,6 +261,7 @@ bool hourly_tune_face_loop(movement_event_t event, movement_settings_t *settings
             else {
                 state->active_tune = state->tune;
                 watch_set_indicator(WATCH_INDICATOR_BELL);
+                tune_number = state->tune;
             }
             break;
         case EVENT_ALARM_BUTTON_UP:
